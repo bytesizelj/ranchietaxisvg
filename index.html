@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7C6G3KZ8K1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7C6G3KZ8K1');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranchie Taxi - Your Trusted Ride in Paradise</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            color: #1a1a1a;
+            overflow-x: hidden;
+            background-color: #f5f5f5;
+        }
+
+        /* Hero Section with Background */
+        .hero-section {
+            min-height: 100vh;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), 
+                              url('https://i.postimg.cc/mDcKk8XG/Screenshot-2025-07-25-113844-20250725-130213-0000.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Main Card Container */
+        .main-card {
+            background: white;
+            border-radius: 24px;
+            padding: 32px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 100%;
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Logo Section */
+        .logo-section {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .logo-img {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 16px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-section h1 {
+            font-size: 36px;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .tagline {
+            color: #6b7280;
+            font-size: 16px;
+            font-style: italic;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            letter-spacing: 0.5px;
+        }
+
+        /* Welcome Text */
+        .welcome-text {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .welcome-text h2 {
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .welcome-text p {
+            color: #6b7280;
+            font-size: 17px;
+            font-weight: 300;
+            letter-spacing: 0.3px;
+        }
+
+        /* Booking Options */
+        .booking-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .booking-card {
+            background: #f9fafb;
+            border: 2px solid #e5e7eb;
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .booking-card:hover {
+            border-color: #10b981;
+            background: #f0fdf4;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
+        }
+
+        .booking-card-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .booking-card h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: #1a1a1a;
+        }
+
+        .booking-card p {
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        /* Quick Destinations */
+        .quick-destinations {
+            margin-bottom: 24px;
+        }
+
+        .section-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .destination-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .destination-btn {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .destination-btn:hover {
+            border-color: #ea580c;
+            background: #fff7ed;
+            transform: translateY(-1px);
+        }
+
+        .destination-btn-icon {
+            font-size: 24px;
+            margin-bottom: 4px;
+        }
+
+        .destination-btn-text {
+            font-size: 14px;
+            font-weight: 500;
+            color: #374151;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            text-align: center;
+            padding-top: 24px;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .phone-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .phone-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(234, 88, 12, 0.3);
+        }
+
+        /* Navigation */
+        .bottom-nav {
+            <!-- Bottom Navigation -->
+<nav class="bottom-nav">
+    <a href="index.html" class="nav-item active">
+        <span class="nav-icon">🏠</span>
+        <span>Home</span>
+    </a>
+    <a href="booking.html" class="nav-item">
+        <span class="nav-icon">🚕</span>
+        <span>Book</span>
+    </a>
+    <a href="destinations.html" class="nav-item">
+        <span class="nav-icon">📍</span>
+        <span>Places</span>
+    </a>
+    <a href="reviews.html" class="nav-item">
+        <span class="nav-icon">⭐</span>
+        <span>Reviews</span>
+    </a>
+    <a href="about.html" class="nav-item">
+        <span class="nav-icon">ℹ️</span>
+        <span>About</span>
+    </a>
+</nav>
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .main-card {
+                padding: 24px;
+                margin: 20px;
+            }
+
+            .booking-options {
+                grid-template-columns: 1fr;
+            }
+
+            .welcome-text h2 {
+                font-size: 24px;
+            }
+
+            .destination-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 20% auto;
+            padding: 32px;
+            border-radius: 24px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+        }
+
+        .modal-text {
+            color: #6b7280;
+            margin-bottom: 24px;
+        }
+
+        .modal-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .modal-btn {
+            padding: 16px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .phone-modal-btn {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .phone-modal-btn:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+        }
+
+        .whatsapp-modal-btn {
+            background: #25D366;
+            color: white;
+        }
+
+        .whatsapp-modal-btn:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+        }
+
+        .close-modal {
+            margin-top: 16px;
+            background: #f3f4f6;
+            color: #374151;
+        }
+
+        .close-modal:hover {
+            background: #e5e7eb;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-section">
+        <div class="main-card">
+            <!-- Logo Section -->
+            <div class="logo-section">
+                <img src="https://i.postimg.cc/N0tzBQTm/Screenshot-20250725-221145-Canva.jpg" alt="Ranchie Taxi Logo" class="logo-img">
+                <h1>Ranchie Taxi</h1>
+                <p class="tagline">Saint Vincent & the Grenadines</p>
+            </div>
+
+            <!-- Welcome Text -->
+            <div class="welcome-text">
+                <h2>Your ride is here.</h2>
+                <p>Reliable taxi service across paradise</p>
+            </div>
+
+            <!-- Booking Options -->
+            <div class="booking-options">
+                <div class="booking-card" onclick="showRideNowOptions()">
+                    <div class="booking-card-icon">🚗</div>
+                    <h3>Ride Now</h3>
+                    <p>Book instantly</p>
+                </div>
+                <a href="booking.html?schedule=true" class="booking-card">
+                    <div class="booking-card-icon">📅</div>
+                    <h3>Schedule</h3>
+                    <p>Plan ahead</p>
+                </a>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="contact-section">
+                <a href="tel:1784-493-2354" class="phone-btn">
+                    <span>📞</span>
+                    <span>Call Now: 1784-493-2354</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item active">
+            <span class="nav-icon">🏠</span>
+            <span>Home</span>
+        </a>
+        <a href="booking.html" class="nav-item">
+            <span class="nav-icon">🚕</span>
+            <span>Book</span>
+        </a>
+        <a href="destinations.html" class="nav-item">
+            <span class="nav-icon">📍</span>
+            <span>Destinations</span>
+        </a>
+        <a href="about.html" class="nav-item">
+            <span class="nav-icon">ℹ️</span>
+            <span>About</span>
+        </a>
+    </nav>
+
+    <!-- Ride Now Modal -->
+    <div id="rideNowModal" class="modal">
+        <div class="modal-content">
+            <h3 class="modal-header">Choose Contact Method</h3>
+            <p class="modal-text">How would you like to book your ride?</p>
+            <div class="modal-options">
+                <a href="tel:1784-493-2354" class="modal-btn phone-modal-btn">
+                    <span>📞</span>
+                    <span>Call Now</span>
+                </a>
+                <a href="https://wa.me/17844932354?text=Hi%20Ranchie%20Taxi!%20I%20need%20a%20ride%20now." class="modal-btn whatsapp-modal-btn">
+                    <span>📱</span>
+                    <span>WhatsApp</span>
+                </a>
+                <button onclick="closeModal()" class="modal-btn close-modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showRideNowOptions() {
+            document.getElementById('rideNowModal').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('rideNowModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('rideNowModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

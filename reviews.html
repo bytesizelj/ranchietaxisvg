@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7C6G3KZ8K1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      
+      gtag('config', 'G-7C6G3KZ8K1');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Reviews - Ranchie Taxi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            color: #1a1a1a;
+            background-color: #f5f5f5;
+            padding-bottom: 80px;
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            padding: 16px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .header-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .back-btn {
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: #f3f4f6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            text-decoration: none;
+            color: #374151;
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: #e5e7eb;
+        }
+
+        .header h1 {
+            font-size: 22px;
+            font-weight: 700;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            flex: 1;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Rating Summary Section */
+        .rating-summary {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 24px;
+        }
+
+        .overall-rating {
+            font-size: 48px;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .stars-container {
+            display: flex;
+            justify-content: center;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+
+        .star {
+            color: #fbbf24;
+            font-size: 32px;
+        }
+
+        .star.empty {
+            color: #e5e7eb;
+        }
+
+        .total-reviews {
+            color: #6b7280;
+            font-size: 16px;
+        }
+
+        /* Leave Review Button */
+        .leave-review-section {
+            background: linear-gradient(135deg, #10b981 0%, #14b8a6 100%);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            margin-bottom: 32px;
+            color: white;
+        }
+
+        .leave-review-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .leave-review-subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .review-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .review-btn {
+            background: white;
+            color: #047857;
+            padding: 14px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .review-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Reviews Section */
+        .reviews-section {
+            margin-bottom: 24px;
+        }
+
+        .section-header {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+        }
+
+        .review-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 16px;
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 12px;
+        }
+
+        .reviewer-info {
+            flex: 1;
+        }
+
+        .reviewer-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+
+        .review-date {
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        .review-stars {
+            display: flex;
+            gap: 2px;
+        }
+
+        .review-star {
+            color: #fbbf24;
+            font-size: 16px;
+        }
+
+        .review-text {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #374151;
+            margin-bottom: 12px;
+        }
+
+        .review-route {
+            font-size: 14px;
+            color: #6b7280;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Trust Badge */
+        .trust-badge {
+            background: #f0fdf4;
+            border: 2px solid #10b981;
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .badge-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .badge-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #047857;
+            margin-bottom: 4px;
+        }
+
+        .badge-text {
+            font-size: 14px;
+            color: #065f46;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            border-top: 1px solid #e5e7eb;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-around;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            text-decoration: none;
+            color: #6b7280;
+            font-size: 12px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item:hover {
+            color: #ea580c;
+            background: #fff7ed;
+        }
+
+        .nav-item.active {
+            color: #ea580c;
+        }
+
+        .nav-icon {
+            font-size: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .review-buttons {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="back-btn">←</a>
+            <img src="https://i.postimg.cc/N0tzBQTm/Screenshot-20250725-221145-Canva.jpg" alt="Ranchie Taxi" class="header-logo">
+            <h1>Customer Reviews</h1>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Rating Summary -->
+        <div class="rating-summary">
+            <div class="overall-rating">4.8</div>
+            <div class="stars-container">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+            </div>
+            <div class="total-reviews">Based on 127 reviews</div>
+        </div>
+
+        <!-- Leave Review Section -->
+        <div class="leave-review-section">
+            <h2 class="leave-review-title">Share Your Experience</h2>
+            <p class="leave-review-subtitle">Help others by sharing your ride experience</p>
+            <div class="review-buttons">
+                <a href="https://wa.me/17844932354?text=Hi%20Ranchie%20Taxi!%20I'd%20like%20to%20leave%20a%20review%20about%20my%20recent%20ride." class="review-btn">
+                    <span>📱</span>
+                    <span>WhatsApp Review</span>
+                </a>
+                <a href="https://www.google.com/search?q=ranchie+taxi+saint+vincent" target="_blank" class="review-btn">
+                    <span>🔍</span>
+                    <span>Google Review</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Trust Badge -->
+        <div class="trust-badge">
+            <div class="badge-icon">✓</div>
+            <h3 class="badge-title">Verified Service</h3>
+            <p class="badge-text">All reviews are from real customers</p>
+        </div>
+
+        <!-- Reviews List -->
+        <div class="reviews-section">
+            <h2 class="section-header">Recent Reviews</h2>
+
+            <!-- Review 1 -->
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-info">
+                        <h3 class="reviewer-name">Sarah M.</h3>
+                        <p class="review-date">January 2025</p>
+                    </div>
+                    <div class="review-stars">
+                        <span class="review-star">★</span>
+                        <span class="review-star">★</span>
+                        <span class="review-star">★</span>
+                        <span class="review-star">★</span>
+                        <span class="review-star">★</span>
+                    </div>
+                </div>
+                <p class="review-text">
+                    Excellent service! Ranchie was waiting for us at the airport even though our flight was delayed. Very professional and knows all the best routes. The car was clean and comfortable. Highly recommend!
+                </p>
+                <p class="review-route">
+                    <span>🚗</span>
+                    <span>Airport to Villa Beach</span>
+                </p>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-info">
+                        <h3 class="reviewer-name">Michael R.</h3>
+                        <p class="review-date">January 2025</p>
+                    </div>
+                    <div class="review-stars">
+                        <span class="review-star">★</span>
+                        <span class="review-star">★</span>
+                        <span class="review-star">★</span>
+                        <span class="review-star">★</span>
+                        <span class="review-star">★</span>
+                    </div>
+                </div>
+                <p class="review-text">
+                    Best taxi service in SVG! Always on time and fair prices. Ranchie gave us great recommendations for restaurants and beaches. We used his service throughout our vacation.
+                </p>
+                <p class="review-route">
+                    <span>🚗</span>
+                    <span>Multiple trips around the island</span>
+                </p>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-info">
+                        <h3 class="reviewer-name">Lisa T.</h3>
+                        <p class="review-date">December 2024</p>
+                    </div>
+                    <div class="review-stars">
+                        <span class="review-star">★</span>
+                        <span class="review-star">★</span>
+                        <span class="review-star">★</span>
+                        <span class="review-star">★</span>
+                        <span class="review-star">★</span>
+                    </div>
+                </div>
+                <p class="review-text">
+                    Very reliable service. I use Ranchie Taxi for all my business trips to Kingstown. Always arrives early and gets me there safely. Couldn't ask for better service!
+                </p>
+                <p class="review-route">
+                    <span>🚗</span>
+                    <span>Arnos Vale to Kingstown</span>
+                </p>
+            </div>
+
+            <!-- Review 4 -->
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-info">
+                        <h3 class="reviewer-name">David & Emma</h3>
+                        <p class="review-date">December 2024</p>
+                    </div>
+                    <div class="review-stars">
+                        <span class="review-star">★</span>
+                        <span class="review-star">★</span>
+                        <span class="review-star">★</span>
+                        <span class="review-star">★</span>
+                        <span class="review-star">★</span>
+                    </div>
+                </div>
+                <p class="review-text">
+                    Fantastic island tour! Ranchie showed us hidden gems we would never have found on our own. His knowledge of local history and culture made the trip extra special. 10/10!
+                </p>
+                <p class="review-route">
+                    <span>🚗</span>
+                    <span>Full Island Tour</span>
+                </p>
+            </div>
+
+            <!-- Review 5 -->
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="reviewer-info">
+                        <h3 class="reviewer-name">Jennifer K.</h3>
+                        <p class="review-date">November 2024</p>
+                    </div>
+                    <div class="review-stars">
+                        <span class="review-star">★</span>
+                        <span class="review-star">★</span>
+                        <span class="review-star">★</span>
+                        <span class="review-star">★</span>
+                        <span class="review-star">★</span>
+                    </div>
+                </div>
+                <p class="review-text">
+                    Safe, punctual, and friendly service. As a solo female traveler, I felt completely safe. Ranchie was professional and respectful. Will definitely use again on my next visit!
+                </p>
+                <p class="review-route">
+                    <span>🚗</span>
+                    <span>Bequia Ferry to Hotel</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="leave-review-section" style="background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);">
+            <h2 class="leave-review-title">Need a Ride?</h2>
+            <p class="leave-review-subtitle">Experience our 5-star service yourself!</p>
+            <div class="review-buttons">
+                <a href="booking.html" class="review-btn">
+                    <span>🚕</span>
+                    <span>Book Now</span>
+                </a>
+                <a href="tel:1784-493-2354" class="review-btn">
+                    <span>📞</span>
+                    <span>Call Direct</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span>Home</span>
+        </a>
+        <a href="booking.html" class="nav-item">
+            <span class="nav-icon">🚕</span>
+            <span>Book</span>
+        </a>
+        <a href="destinations.html" class="nav-item">
+            <span class="nav-icon">📍</span>
+            <span>Destinations</span>
+        </a>
+        <a href="reviews.html" class="nav-item active">
+            <span class="nav-icon">⭐</span>
+            <span>Reviews</span>
+        </a>
+    </nav>
+</body>
+</html>

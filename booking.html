@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7C6G3KZ8K1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7C6G3KZ8K1');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Ride - Ranchie Taxi</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            color: #1a1a1a;
+            background-color: #f5f5f5;
+            padding-bottom: 80px;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), 
+                              url('https://i.postimg.cc/28vm28xf/Screenshot-2025-07-25-113206-20250725-130202-0000.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            padding: 16px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .header-logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .back-btn {
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: #f3f4f6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            text-decoration: none;
+            color: #374151;
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: #e5e7eb;
+        }
+
+        .header h1 {
+            font-size: 22px;
+            font-weight: 700;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            flex: 1;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Page Title Section */
+        .page-title-section {
+            text-align: center;
+            margin-bottom: 32px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .page-main-title {
+            font-size: 36px;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            letter-spacing: 1px;
+        }
+
+        .page-subtitle {
+            font-size: 18px;
+            color: #6b7280;
+            font-style: italic;
+        }
+
+        /* Booking Form */
+        .booking-form {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 8px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: #f9fafb;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #10b981;
+            background: white;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        textarea.form-input {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* Map Preview */
+        .map-preview {
+            background: #e5e7eb;
+            border-radius: 12px;
+            height: 200px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #10b981 0%, #14b8a6 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+        }
+
+        /* Popular Destinations Section */
+        .destinations-section {
+            margin-top: 32px;
+        }
+
+        .section-header {
+            margin-bottom: 16px;
+        }
+
+        .section-header h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+
+        .section-header p {
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        .destination-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .destination-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .destination-image {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            background: #e5e7eb;
+        }
+
+        .destination-info {
+            padding: 16px;
+        }
+
+        .destination-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 8px;
+        }
+
+        .destination-name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .destination-icon {
+            font-size: 20px;
+        }
+
+        .destination-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        .destination-price {
+            color: #10b981;
+            font-weight: 600;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            <!-- Bottom Navigation -->
+<nav class="bottom-nav">
+    <a href="index.html" class="nav-item">
+        <span class="nav-icon">🏠</span>
+        <span>Home</span>
+    </a>
+    <a href="booking.html" class="nav-item active">
+        <span class="nav-icon">🚕</span>
+        <span>Book</span>
+    </a>
+    <a href="destinations.html" class="nav-item">
+        <span class="nav-icon">📍</span>
+        <span>Places</span>
+    </a>
+    <a href="reviews.html" class="nav-item">
+        <span class="nav-icon">⭐</span>
+        <span>Reviews</span>
+    </a>
+    <a href="about.html" class="nav-item">
+        <span class="nav-icon">ℹ️</span>
+        <span>About</span>
+    </a>
+</nav>
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="index.html" class="back-btn">←</a>
+            <img src="https://i.postimg.cc/N0tzBQTm/Screenshot-20250725-221145-Canva.jpg" alt="Ranchie Taxi" class="header-logo">
+            <h1>Book Your Ride</h1>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Page Title Section -->
+        <div class="page-title-section">
+            <h1 class="page-main-title">Book Your Island Ride</h1>
+            <p class="page-subtitle">Experience comfort and reliability across Saint Vincent</p>
+        </div>
+
+        <!-- Booking Form -->
+        <div class="booking-form">
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label class="form-label">📍 Pickup Location</label>
+                    <input type="text" class="form-input" id="pickup" placeholder="Enter pickup address" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">🎯 Destination</label>
+                    <input type="text" class="form-input" id="destination" placeholder="Where are you going?" required>
+                </div>
+
+                <!-- Map Preview -->
+                <div class="map-preview"></div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">📅 Date</label>
+                        <input type="date" class="form-input" id="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">⏰ Time</label>
+                        <input type="time" class="form-input" id="time" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">👥 Passengers</label>
+                        <select class="form-input" id="passengers" required>
+                            <option value="1">1 passenger</option>
+                            <option value="2">2 passengers</option>
+                            <option value="3">3 passengers</option>
+                            <option value="4">4 passengers</option>
+                            <option value="5">5 passengers</option>
+                            <option value="6">6 passengers</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">📞 Phone Number</label>
+                        <input type="tel" class="form-input" id="phone" placeholder="1784-xxx-xxxx" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">💬 Special Instructions (Optional)</label>
+                    <textarea class="form-input" id="notes" placeholder="Any special requirements or notes for the driver..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <span>📱</span>
+                    <span>Book via WhatsApp</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span>Home</span>
+        </a>
+        <a href="booking.html" class="nav-item active">
+            <span class="nav-icon">🚕</span>
+            <span>Book</span>
+        </a>
+        <a href="destinations.html" class="nav-item">
+            <span class="nav-icon">📍</span>
+            <span>Destinations</span>
+        </a>
+        <a href="about.html" class="nav-item">
+            <span class="nav-icon">ℹ️</span>
+            <span>About</span>
+        </a>
+    </nav>
+
+    <script>
+        // Set minimum date to today
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('date').min = today;
+            document.getElementById('date').value = today;
+
+            // Check URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const destination = urlParams.get('destination');
+            
+            if (destination) {
+                if (destination === 'airport') {
+                    document.getElementById('destination').value = 'Argyle International Airport';
+                } else if (destination === 'kingstown') {
+                    document.getElementById('destination').value = 'Kingstown';
+                } else if (destination === 'villa-beach') {
+                    document.getElementById('destination').value = 'Villa Beach';
+                } else if (destination === 'bequia-ferry') {
+                    document.getElementById('destination').value = 'Bequia Ferry Terminal';
+                }
+            }
+
+            // Handle schedule parameter
+            const isSchedule = urlParams.get('schedule');
+            if (isSchedule) {
+                // Set time to next hour
+                const now = new Date();
+                now.setHours(now.getHours() + 1);
+                const hours = now.getHours().toString().padStart(2, '0');
+                const minutes = '00';
+                document.getElementById('time').value = `${hours}:${minutes}`;
+            }
+
+            // Initialize Google Map
+            if (typeof google !== 'undefined') {
+                initMap();
+            }
+        });
+
+        // Select destination from cards
+        function selectDestination(destination) {
+            document.getElementById('destination').value = destination;
+            // Smooth scroll to form
+            document.querySelector('.booking-form').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Google Maps Integration
+        let map;
+        let directionsService;
+        let directionsRenderer;
+        let pickupMarker;
+        let destinationMarker;
+        let pickupAutocomplete;
+        let destinationAutocomplete;
+
+        function initMap() {
+            // Initialize map centered on Saint Vincent
+            map = new google.maps.Map(document.querySelector('.map-preview'), {
+                center: { lat: 13.1579, lng: -61.2248 },
+                zoom: 11,
+                styles: [
+                    {
+                        featureType: "poi",
+                        elementType: "labels",
+                        stylers: [{ visibility: "off" }]
+                    }
+                ]
+            });
+
+            directionsService = new google.maps.DirectionsService();
+            directionsRenderer = new google.maps.DirectionsRenderer({
+                map: map,
+                suppressMarkers: true
+            });
+
+            // Initialize autocomplete for pickup and destination
+            const pickupInput = document.getElementById('pickup');
+            const destinationInput = document.getElementById('destination');
+
+            pickupAutocomplete = new google.maps.places.Autocomplete(pickupInput, {
+                componentRestrictions: { country: 'vc' },
+                fields: ['place_id', 'geometry', 'name', 'formatted_address']
+            });
+
+            destinationAutocomplete = new google.maps.places.Autocomplete(destinationInput, {
+                componentRestrictions: { country: 'vc' },
+                fields: ['place_id', 'geometry', 'name', 'formatted_address']
+            });
+
+            // Listen for place changes
+            pickupAutocomplete.addListener('place_changed', () => {
+                const place = pickupAutocomplete.getPlace();
+                if (place.geometry) {
+                    updatePickupMarker(place.geometry.location);
+                    calculateRoute();
+                }
+            });
+
+            destinationAutocomplete.addListener('place_changed', () => {
+                const place = destinationAutocomplete.getPlace();
+                if (place.geometry) {
+                    updateDestinationMarker(place.geometry.location);
+                    calculateRoute();
+                }
+            });
+        }
+
+        function updatePickupMarker(location) {
+            if (pickupMarker) {
+                pickupMarker.setMap(null);
+            }
+            pickupMarker = new google.maps.Marker({
+                position: location,
+                map: map,
+                title: 'Pickup Location',
+                icon: {
+                    url: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'
+                }
+            });
+        }
+
+        function updateDestinationMarker(location) {
+            if (destinationMarker) {
+                destinationMarker.setMap(null);
+            }
+            destinationMarker = new google.maps.Marker({
+                position: location,
+                map: map,
+                title: 'Destination',
+                icon: {
+                    url: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png'
+                }
+            });
+        }
+
+        function calculateRoute() {
+            const pickup = document.getElementById('pickup').value;
+            const destination = document.getElementById('destination').value;
+
+            if (pickup && destination) {
+                const request = {
+                    origin: pickup,
+                    destination: destination,
+                    travelMode: google.maps.TravelMode.DRIVING
+                };
+
+                directionsService.route(request, (result, status) => {
+                    if (status === 'OK') {
+                        directionsRenderer.setDirections(result);
+                        
+                        // Update markers at exact route endpoints
+                        const route = result.routes[0];
+                        updatePickupMarker(route.legs[0].start_location);
+                        updateDestinationMarker(route.legs[0].end_location);
+                        
+                        // Fit map to show entire route
+                        const bounds = new google.maps.LatLngBounds();
+                        bounds.extend(route.legs[0].start_location);
+                        bounds.extend(route.legs[0].end_location);
+                        map.fitBounds(bounds);
+                    }
+                });
+            }
+        }
+
+        // Initialize map when Google Maps is loaded
+        window.initMapWhenReady = function() {
+            initMap();
+        }
+
+        // Handle form submission
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const pickup = document.getElementById('pickup').value.trim();
+            const destination = document.getElementById('destination').value.trim();
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const passengers = document.getElementById('passengers').value;
+            const phone = document.getElementById('phone').value.trim();
+            const notes = document.getElementById('notes').value.trim() || 'None';
+            
+            // Format date for message
+            const dateObj = new Date(date);
+            const formattedDate = dateObj.toLocaleDateString('en-US', { 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+            
+            // Create WhatsApp message
+            const message = `🚕 *RANCHIE TAXI BOOKING REQUEST*
+
+📍 *Pickup:* ${pickup}
+🎯 *Destination:* ${destination}
+📅 *Date:* ${formattedDate}
+⏰ *Time:* ${time}
+👥 *Passengers:* ${passengers}
+📞 *Phone:* ${phone}
+💬 *Notes:* ${notes}
+
+Please confirm availability and provide fare quote. Thank you!`;
+
+            // Create WhatsApp URL
+            const whatsappURL = `https://wa.me/17844932354?text=${encodeURIComponent(message)}`;
+            
+            // Open WhatsApp
+            window.open(whatsappURL, '_blank');
+            
+            // Store booking details in sessionStorage for confirmation page
+            sessionStorage.setItem('pickup', pickup);
+            sessionStorage.setItem('destination', destination);
+            sessionStorage.setItem('date', formattedDate);
+            sessionStorage.setItem('time', time);
+            sessionStorage.setItem('passengers', passengers + ' passenger' + (passengers > 1 ? 's' : ''));
+            
+            // Check if it's a scheduled booking (not today or ASAP)
+            const isScheduled = date !== new Date().toISOString().split('T')[0] || time !== 'ASAP';
+            
+            if (isScheduled) {
+                // Redirect to confirmation page for scheduled bookings
+                setTimeout(() => {
+                    window.location.href = 'confirmation.html';
+                }, 1000);
+            } else {
+                // Show message for immediate bookings
+                alert('Opening WhatsApp to connect you with Ranchie Taxi immediately!');
+                
+                // Optional: Reset form after submission
+                setTimeout(() => {
+                    if (confirm('Request sent! Would you like to make another booking?')) {
+                        document.getElementById('bookingForm').reset();
+                        // Reset date to today
+                        const today = new Date().toISOString().split('T')[0];
+                        document.getElementById('date').value = today;
+                    } else {
+                        // Redirect to home
+                        window.location.href = 'index.html';
+                    }
+                }, 1000);
+            }
+        });
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwGQlYvLODysT5Lgd0k-VRp0jzp2_-ix8&libraries=places"></script>
+</body>
+</html>
